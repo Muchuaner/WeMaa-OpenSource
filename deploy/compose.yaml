@@ -1,0 +1,50 @@
+name: wemaa
+services:
+  core:
+    image: wemaa:0.1.0
+    build:
+      context: ..
+    restart: unless-stopped
+    env_file: ../.env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      WEMAA_DATABASE_URL: postgresql+psycopg2://wemaa:${WEMAA_DB_PASSWORD}@postgres/wemaa
+    ports:
+      - 127.0.0.1:18003:8001
+    volumes:
+      - ../private/config:/MaiMBot/config
+      - ../private/data:/MaiMBot/data
+      - ../private/logs:/MaiMBot/logs
+      - ../private/plugins:/MaiMBot/plugins
+      - ../private/depends-data:/MaiMBot/depends-data
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: [redis-server, --appendonly, 'yes']
+    volumes: [redis:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wemaa
+      POSTGRES_DB: wemaa
+      POSTGRES_PASSWORD: ${WEMAA_DB_PASSWORD}
+    volumes: [postgres:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U wemaa]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+volumes:
+  redis:
+  postgres:

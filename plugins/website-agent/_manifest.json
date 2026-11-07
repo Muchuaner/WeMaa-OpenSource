@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "id": "wemaa.website-agent",
+  "name": "网站 Agent",
+  "version": "0.1.0",
+  "description": "创作平台 AI 网站客服、会话取消、账户绑定与创作能力。",
+  "author": {
+    "name": "WeMaa",
+    "url": "https://github.com/Muchuaner/WeMaa"
+  },
+  "license": "GPL-3.0-or-later",
+  "host_application": {
+    "min_version": "1.2.5",
+    "max_version": "1.2.5"
+  },
+  "sdk": {
+    "min_version": "2.8.1",
+    "max_version": "2.99.99"
+  },
+  "capabilities": [
+    "gateway.route_message",
+    "gateway.update_state"
+  ],
+  "dependencies": [],
+  "urls": {
+    "repository": "https://github.com/Muchuaner/WeMaa",
+    "homepage": "https://github.com/Muchuaner/WeMaa",
+    "documentation": "https://github.com/Muchuaner/WeMaa",
+    "issues": "https://github.com/Muchuaner/WeMaa/issues"
+  },
+  "i18n": {
+    "default_locale": "zh-CN",
+    "locales_path": "_locales",
+    "supported_locales": [
+      "zh-CN"
+    ]
+  }
+}

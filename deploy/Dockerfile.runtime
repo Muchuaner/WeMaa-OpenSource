@@ -1,0 +1,14 @@
+ARG CORE_BASE
+FROM ${CORE_BASE}
+WORKDIR /MaiMBot
+COPY apps/core/requirements.txt /tmp/wemaa-core-requirements.txt
+COPY deploy/requirements.txt /tmp/wemaa-requirements.txt
+RUN python -m pip install --no-cache-dir -r /tmp/wemaa-requirements.txt
+COPY apps/core/ /MaiMBot/
+COPY wemaa/ /opt/wemaa/wemaa/
+COPY plugins/website-agent/ /opt/wemaa/builtin-plugins/website-agent/
+COPY apps/webui/dist/ /opt/wemaa/webui/
+COPY deploy/entrypoint.sh /opt/wemaa/entrypoint.sh
+ENV PYTHONPATH=/opt/wemaa:/MaiMBot WEMAA_WEB_DIST=/opt/wemaa/webui WEMAA_DATA_DIR=/MaiMBot/data/wemaa
+EXPOSE 8001
+ENTRYPOINT ["/bin/sh","/opt/wemaa/entrypoint.sh"]

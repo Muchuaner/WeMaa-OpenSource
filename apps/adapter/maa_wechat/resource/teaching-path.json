@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "screen": [1920,1080],
+  "client": [0,0,1920,1040],
+  "divider_client_x": 480,
+  "maafw": "5.14.0",
+  "screencap": "PrintWindow",
+  "mouse": "PostMessage",
+  "coordinate_space": "Maa raw client pixels; never macOS RDP viewport pixels",
+  "lessons": [
+    {"node":"OpenContacts","target":[30,160],"postcondition":"green selected navigation icon in [17,147,29,28]","status":"verified connected and disconnected"},
+    {"node":"SelectContactRow","target":"Maa avatar/OCR row center; x=180","postcondition":"selected row green at x65; profile OCR [1030,80,400,820]","status":"live verified; latest complete partitions: personal 396/396, enterprise 16/16, public 4/4; overlapping scopes are not a unique-user total"},
+    {"node":"ContactsScrollDown","target":[250,650],"dy":-120,"repeat":5,"repeat_delay":30,"postcondition":"next list frame differs; ordered avatar/name overlap must validate","status":"verified disconnected"},
+    {"node":"ContactsScrollUp","target":[250,650],"dy":12000,"repeat":"override 40 per batch, maximum 15 batches","postcondition":"top scrollbar or two stable frames","status":"verified disconnected"},
+    {"node":"OpenContactManager","target":[250,99],"postcondition":"same-process owned window titled 通讯录管理, client 720x560","status":"verified disconnected"},
+    {"node":"ReadFriendCount","roi":[5,42,190,42],"postcondition":"Maa OCR 全部(392)","status":"verified disconnected"},
+    {"node":"CloseContactManager","target":[698,20],"coordinate_space":"720x560 popup client","postcondition":"popup no longer visible","status":"verified disconnected"},
+    {"node":"OpenRecent","target":[30,110],"status":"verified"},
+    {"node":"UnreadBadges","roi":[97,80,19,950],"status":"live verified; priority within current page only, no global immediate preemption"},
+    {"node":"SelectRecentRow","target":"x200, Maa row center","postcondition":"pre-click exact OCR nickname and inner avatar hash, post-click title equality","status":"live verified; identity mismatch stops that read, IDs remain visual provisional"},
+    {"node":"ReadChat","roi":[490,82,1395,805],"postcondition":"verified chat title; preserve raw OCR line evidence and ordered context","status":"live MAA0926A append once then unchanged; sender, media and group members remain unresolved"}
+  ],
+  "sending_enabled": false
+}

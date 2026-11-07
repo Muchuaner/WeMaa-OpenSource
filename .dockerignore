@@ -1,0 +1,16 @@
+.git
+**/node_modules
+**/.venv
+**/__pycache__
+**/*.pyc
+private
+evidence
+.env
+**/.env*
+apps/core/config
+apps/core/data
+apps/core/logs
+**/*.sqlite*
+**/*.db
+**/*.pem
+**/*.key

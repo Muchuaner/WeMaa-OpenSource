@@ -1,0 +1,922 @@
+{
+  "ListRows": {
+    "recognition": "Custom",
+    "custom_recognition": "ListRows",
+    "custom_recognition_param": {
+      "kind": "contacts"
+    },
+    "action": "DoNothing",
+    "timeout": 500
+  },
+  "ReadContactCategories": {
+    "recognition": "OCR",
+    "roi": [
+      70,
+      80,
+      400,
+      300
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ContactCategoryState": {
+    "recognition": "Custom",
+    "custom_recognition": "ContactCategory",
+    "custom_recognition_param": {},
+    "action": "DoNothing",
+    "timeout": 500,
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ToggleContactCategory": {
+    "recognition": "Custom",
+    "custom_recognition": "ContactCategory",
+    "custom_recognition_param": {},
+    "action": "Click",
+    "target": true,
+    "timeout": 500,
+    "post_delay": 250
+  },
+  "OpenContactManager": {
+    "recognition": "OCR",
+    "roi": [
+      65,
+      80,
+      400,
+      40
+    ],
+    "expected": [
+      "通讯录管理"
+    ],
+    "action": "Click",
+    "target": [
+      250,
+      99,
+      1,
+      1
+    ],
+    "post_delay": 300
+  },
+  "ReadFriendCount": {
+    "recognition": "OCR",
+    "roi": [
+      5,
+      42,
+      190,
+      42
+    ],
+    "expected": [
+      "全部.*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "CloseContactManager": {
+    "recognition": "OCR",
+    "roi": [
+      0,
+      0,
+      200,
+      40
+    ],
+    "expected": [
+      "通讯录管理"
+    ],
+    "action": "Click",
+    "target": [
+      698,
+      20,
+      1,
+      1
+    ],
+    "post_delay": 250,
+    "timeout": 1500
+  },
+  "OpenContacts": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      30,
+      160,
+      1,
+      1
+    ],
+    "post_delay": 350,
+    "next": [
+      "VerifyContacts"
+    ]
+  },
+  "VerifyContacts": {
+    "recognition": "ColorMatch",
+    "roi": [
+      17,
+      147,
+      29,
+      28
+    ],
+    "method": 4,
+    "lower": [
+      0,
+      100,
+      35
+    ],
+    "upper": [
+      90,
+      230,
+      170
+    ],
+    "count": 8,
+    "action": "DoNothing",
+    "timeout": 1500
+  },
+  "OpenRecent": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      30,
+      110,
+      1,
+      1
+    ],
+    "post_delay": 350,
+    "next": [
+      "VerifyRecent"
+    ]
+  },
+  "VerifyRecent": {
+    "recognition": "ColorMatch",
+    "roi": [
+      17,
+      97,
+      29,
+      28
+    ],
+    "method": 4,
+    "lower": [
+      0,
+      100,
+      35
+    ],
+    "upper": [
+      90,
+      230,
+      170
+    ],
+    "count": 8,
+    "action": "DoNothing",
+    "timeout": 1500
+  },
+  "SelectRecentRow": {
+    "recognition": "Custom",
+    "custom_recognition": "VerifyRecentRow",
+    "custom_recognition_param": {},
+    "action": "Click",
+    "target": [
+      200,
+      110,
+      1,
+      1
+    ],
+    "pre_delay": 0,
+    "post_delay": 250,
+    "timeout": 500
+  },
+  "UnreadBadges": {
+    "recognition": "ColorMatch",
+    "roi": [
+      97,
+      80,
+      19,
+      950
+    ],
+    "method": 4,
+    "lower": [
+      245,
+      65,
+      65
+    ],
+    "upper": [
+      255,
+      115,
+      115
+    ],
+    "count": 20,
+    "connected": true,
+    "action": "DoNothing",
+    "timeout": 500
+  },
+  "ListAtTop": {
+    "recognition": "ColorMatch",
+    "roi": [
+      470,
+      82,
+      9,
+      8
+    ],
+    "method": 4,
+    "lower": [
+      100,
+      100,
+      100
+    ],
+    "upper": [
+      200,
+      200,
+      200
+    ],
+    "count": 10,
+    "connected": true,
+    "action": "DoNothing",
+    "timeout": 500
+  },
+  "ContactSelectedRow": {
+    "recognition": "ColorMatch",
+    "roi": [
+      61,
+      80,
+      9,
+      950
+    ],
+    "method": 4,
+    "lower": [
+      0,
+      100,
+      35
+    ],
+    "upper": [
+      90,
+      230,
+      170
+    ],
+    "count": 100,
+    "connected": true,
+    "action": "DoNothing",
+    "timeout": 500
+  },
+  "SelectContactRow": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      180,
+      355,
+      1,
+      1
+    ],
+    "post_delay": 200
+  },
+  "Read": {
+    "recognition": "OCR",
+    "roi": [
+      0,
+      0,
+      1920,
+      1040
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ReadContactList": {
+    "recognition": "OCR",
+    "roi": [
+      130,
+      80,
+      340,
+      950
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ReadContactCount": {
+    "recognition": "OCR",
+    "roi": [
+      70,
+      235,
+      400,
+      50
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ReadContactProfile": {
+    "recognition": "OCR",
+    "roi": [
+      1030,
+      80,
+      400,
+      820
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ContactOpenChat": {
+    "recognition": "OCR",
+    "roi": [
+      1030,
+      190,
+      400,
+      700
+    ],
+    "expected": [
+      "^发消息$"
+    ],
+    "action": "Click",
+    "target": true,
+    "repeat": 1,
+    "post_delay": 350,
+    "timeout": 1000,
+    "next": [],
+    "on_error": []
+  },
+  "ReadRecentList": {
+    "recognition": "OCR",
+    "roi": [
+      115,
+      80,
+      285,
+      945
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ReadRecentTimes": {
+    "recognition": "OCR",
+    "roi": [
+      400,
+      80,
+      72,
+      945
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ReadChatTitle": {
+    "recognition": "OCR",
+    "roi": [
+      490,
+      35,
+      900,
+      40
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ChatTitleBlueBadge": {
+    "recognition": "ColorMatch",
+    "roi": [
+      490,
+      35,
+      900,
+      40
+    ],
+    "method": 4,
+    "lower": [
+      0,
+      100,
+      180
+    ],
+    "upper": [
+      120,
+      230,
+      255
+    ],
+    "count": 5,
+    "connected": true,
+    "action": "DoNothing"
+  },
+  "ReadChatMessages": {
+    "recognition": "OCR",
+    "roi": [
+      490,
+      82,
+      1395,
+      805
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "ContactsScrollDown": {
+    "recognition": "DirectHit",
+    "action": "Scroll",
+    "target": [
+      250,
+      650,
+      1,
+      1
+    ],
+    "dx": 0,
+    "dy": -120,
+    "repeat": 5,
+    "repeat_delay": 30,
+    "post_delay": 200
+  },
+  "ContactsScrollUp": {
+    "recognition": "DirectHit",
+    "action": "Scroll",
+    "target": [
+      250,
+      650,
+      1,
+      1
+    ],
+    "dx": 0,
+    "dy": 1200,
+    "repeat": 4,
+    "repeat_delay": 80,
+    "post_delay": 200
+  },
+  "FocusList": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      450,
+      650,
+      1,
+      1
+    ],
+    "post_delay": 100
+  },
+  "FocusChatInput": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      700,
+      944,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 100
+  },
+  "OwnedDraftEnd": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 35,
+    "repeat": 1,
+    "post_delay": 50
+  },
+  "OwnedDraftBackspace": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 8,
+    "repeat": 1,
+    "repeat_delay": 0,
+    "post_delay": 100
+  },
+  "InputDraft": {
+    "recognition": "DirectHit",
+    "action": "InputText",
+    "input_text": "",
+    "repeat": 1,
+    "pre_delay": 0,
+    "post_delay": 150
+  },
+  "ReadChatInput": {
+    "recognition": "OCR",
+    "roi": [
+      495,
+      902,
+      1400,
+      88
+    ],
+    "expected": [
+      ".*"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0
+  },
+  "SendDraft": {
+    "recognition": "OCR",
+    "roi": [
+      1825,
+      985,
+      80,
+      42
+    ],
+    "expected": [
+      "^发送(?:\\s*[（(][A-Za-z][）)])?$"
+    ],
+    "action": "Click",
+    "target": true,
+    "repeat": 1,
+    "pre_delay": 0,
+    "post_delay": 300,
+    "next": [],
+    "on_error": []
+  },
+  "OpenOwnProfile": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      30,
+      61,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 250
+  },
+  "OpenMediaPicker": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      581,
+      1006,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 300
+  },
+  "OpenMessageProfile": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      518,
+      827,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 250
+  },
+  "DismissProfile": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      1100,
+      80,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 150
+  },
+  "MediaFolderFocus": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      375,
+      20,
+      1,
+      1
+    ],
+    "post_delay": 150
+  },
+  "MediaFolderSelect": {
+    "recognition": "DirectHit",
+    "action": "KeyDown",
+    "key": 17,
+    "auto_up": true,
+    "next": [
+      "MediaFolderL"
+    ]
+  },
+  "MediaPathInput": {
+    "recognition": "DirectHit",
+    "action": "InputText",
+    "input_text": ""
+  },
+  "MediaPathEnter": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 13,
+    "post_delay": 800
+  },
+  "MediaNameFocus": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      392,
+      445,
+      1,
+      1
+    ]
+  },
+  "MediaNameInput": {
+    "recognition": "DirectHit",
+    "action": "InputText",
+    "input_text": ""
+  },
+  "MediaFileOpen": {
+    "recognition": "OCR",
+    "roi": [
+      738,
+      460,
+      89,
+      35
+    ],
+    "expected": [
+      "打开"
+    ],
+    "action": "Click",
+    "target": true,
+    "repeat": 1,
+    "post_delay": 1000
+  },
+  "MediaFileCancel": {
+    "recognition": "OCR",
+    "roi": [
+      835,
+      460,
+      95,
+      35
+    ],
+    "expected": [
+      "^取消$"
+    ],
+    "action": "Click",
+    "target": true,
+    "repeat": 1,
+    "post_delay": 250
+  },
+  "MediaFolderL": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 76,
+    "next": [
+      "MediaFolderCtrlUp"
+    ]
+  },
+  "MediaFolderCtrlUp": {
+    "recognition": "DirectHit",
+    "action": "KeyUp",
+    "key": 17
+  },
+  "MediaDialogEscape": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 27,
+    "post_delay": 300
+  },
+  "MediaNameSelect": {
+    "recognition": "DirectHit",
+    "action": "KeyDown",
+    "key": 17,
+    "auto_up": true,
+    "next": [
+      "MediaNameA"
+    ]
+  },
+  "MediaNameA": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 65,
+    "next": [
+      "MediaNameCtrlUp"
+    ]
+  },
+  "MediaNameCtrlUp": {
+    "recognition": "DirectHit",
+    "action": "KeyUp",
+    "key": 17
+  },
+  "MediaNameDefocus": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      700,
+      380,
+      1,
+      1
+    ],
+    "post_delay": 150
+  },
+  "OpenSentVideo": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      1720,
+      691,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 500,
+    "next": [],
+    "on_error": []
+  },
+  "MediaViewerClose": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      1358,
+      20,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 300,
+    "next": [],
+    "on_error": []
+  },
+  "OpenGroupInviteCard": {
+    "recognition": "OCR",
+    "roi": [
+      550,
+      82,
+      260,
+      805
+    ],
+    "expected": [
+      "^邀请你加入群聊$"
+    ],
+    "action": "Click",
+    "target": true,
+    "target_offset": [
+      0,
+      35,
+      0,
+      0
+    ],
+    "repeat": 1,
+    "post_delay": 800,
+    "timeout": 500,
+    "next": [],
+    "on_error": []
+  },
+  "AcceptGroupInvite": {
+    "recognition": "OCR",
+    "roi": [
+      200,
+      650,
+      185,
+      60
+    ],
+    "expected": [
+      "^加入群聊$"
+    ],
+    "action": "Click",
+    "target": true,
+    "repeat": 1,
+    "post_delay": 1000,
+    "timeout": 500,
+    "next": [],
+    "on_error": []
+  },
+  "CloseGroupInvitePage": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      567,
+      20,
+      1,
+      1
+    ],
+    "repeat": 1,
+    "post_delay": 250
+  },
+  "InviteSidebarBlueBadge": {
+    "recognition": "ColorMatch",
+    "roi": [
+      115,
+      80,
+      285,
+      950
+    ],
+    "method": 4,
+    "lower": [
+      0,
+      100,
+      180
+    ],
+    "upper": [
+      120,
+      230,
+      255
+    ],
+    "count": 5,
+    "connected": true,
+    "action": "DoNothing"
+  },
+  "FoldedChatsHeader": {
+    "recognition": "OCR",
+    "roi": [
+      90,
+      82,
+      150,
+      35
+    ],
+    "expected": [
+      "^折叠的聊天$"
+    ],
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": 500
+  },
+  "FoldedChatsBack": {
+    "recognition": "TemplateMatch",
+    "template": "folded-chats-back.png",
+    "roi": [
+      70,
+      85,
+      22,
+      30
+    ],
+    "threshold": 0.95,
+    "action": "Click",
+    "target": [
+      79,
+      100,
+      1,
+      1
+    ],
+    "post_delay": 250,
+    "timeout": 500
+  },
+  "HideRecentMenu": {
+    "recognition": "OCR",
+    "roi": [
+      24,
+      150,
+      160,
+      55
+    ],
+    "expected": [
+      "^不显示$"
+    ],
+    "threshold": 0.9,
+    "action": "Click",
+    "target": true,
+    "post_delay": 250,
+    "timeout": 500
+  },
+  "HideMenuEscape": {
+    "recognition": "DirectHit",
+    "action": "ClickKey",
+    "key": 27,
+    "post_delay": 100
+  },
+  "CopyMessageMenu": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      570,
+      200,
+      1,
+      1
+    ],
+    "contact": 1,
+    "post_delay": 150
+  },
+  "CopyMessageSelect": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      50,
+      30,
+      1,
+      1
+    ],
+    "post_delay": 150
+  },
+  "BindingProfileAction": {
+    "recognition": "DirectHit",
+    "action": "Click",
+    "target": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "post_delay": 400
+  }
+}

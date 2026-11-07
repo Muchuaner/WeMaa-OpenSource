@@ -1,0 +1,13 @@
+WeMaa includes and modifies MaiBot and the matching MaiBot Dashboard.
+Upstream: https://github.com/Mai-with-u/MaiBot
+Pinned core source: b8c39400dcc9940791346503af24f2060649402d
+Dashboard source: existing deployment snapshot, 2026-10-03;
+file-level provenance is recorded in docs/source-baseline.json.
+Core compatibility version: 1.2.5; Dashboard compatibility version: 1.7.4.
+The original copyright, GPL-3.0 license files and component notices are retained.
+WeMaa changes: native Maa Platform IO driver, identity migration, native API,
+media and schedules, unified Dashboard routes, website SDK gateway and deployment.
+
+MaaFramework and its OCR/model assets retain their original upstream notices.
+Third-party packages retain their respective licenses.
+The public source snapshot preserves the included components' licenses and attribution.
